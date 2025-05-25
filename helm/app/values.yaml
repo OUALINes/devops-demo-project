@@ -5,10 +5,11 @@
 replicaCount: 2
 
 image:
+  githubID: OUALINes
   repository: demo-java-app
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag:"v1.0"
+  tag: v1.0
 
 appName: demo-java-app
 
