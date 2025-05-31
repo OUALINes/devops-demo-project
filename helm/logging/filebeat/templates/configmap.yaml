@@ -15,15 +15,23 @@ data:
             - condition:
                 equals: 
                   kubernetes.namespace: {{ .Values.appNamespace }}
-              config:
-                - module: nginx
-                  access.input:
-                      type: docker
-                      containers.ids:
-                      - "${data.kubernetes.container.id}"
-                      paths:
-                        - /var/log/containers/*${data.kubernetes.container.id}.log
+                  kubernetes.labels.app: {{ .Values.appName }}
+              #config:
+              # - module: nginx
+              #   access.input:
+              #       type: docker
+              #       containers.ids:
+              #       - "${data.kubernetes.container.id}"
+              #       paths:
+              #         - /var/log/containers/*${data.kubernetes.container.id}.log
 
+               config:
+                - type: container
+                  paths:
+                    - /var/log/containers/*${data.kubernetes.container.id}.log
+                  processors:
+                    - add_kubernetes_metadata: ~
+                    
     setup.dashboards.enabled: true
     setup.kibana:
       host: {{ .Values.kibanaService }}            
