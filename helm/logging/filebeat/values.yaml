@@ -16,8 +16,8 @@ namespace: logging
 
 appName: filebeat
 
-kibanaService: "192.168.49.2:9020"
-esService: "192.168.49.2:9010"
+kibanaService: "172.16.23.31:9020"
+esService: "172.16.23.31:9010"
 
 imagePullSecrets: []
 nameOverride: ""
