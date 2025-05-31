@@ -12,7 +12,7 @@ image:
 
 appNamespace: app
 
-namespace: logging
+namespace: app
 
 appName: filebeat
 
