@@ -26,6 +26,6 @@ data:
 
     setup.dashboards.enabled: true
     setup.kibana:
-      host: "{{ .Values.kibanaService }}"            
+      host: {{ .Values.kibanaService }}            
     output.elasticsearch:
-      hosts: ["{{ .Values.esService}}"]
+      hosts: [{{ .Values.esService}}]
