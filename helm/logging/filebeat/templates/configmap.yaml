@@ -28,4 +28,4 @@ data:
     setup.kibana:
       host: {{ .Values.kibanaService }}            
     output.elasticsearch:
-      hosts: [{{ .Values.esService}}]
+      hosts: ["{{ .Values.esService}}"]
